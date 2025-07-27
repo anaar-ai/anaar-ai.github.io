@@ -19,12 +19,16 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
+            width: 100%;
+            overflow-x: hidden;
         }
 
         .container {
             text-align: center;
             padding: var(--spacing-xl);
             max-width: 800px;
+            width: 100%;
+            box-sizing: border-box;
         }
 
         .header {
@@ -33,6 +37,8 @@
             justify-content: center;
             margin-bottom: var(--spacing-xl);
             gap: var(--spacing-md);
+            flex-wrap: wrap;
+            width: 100%;
         }
 
         .logo {
@@ -41,26 +47,39 @@
             justify-content: center;
         }
 
+        .logo img {
+            max-width: 100%;
+            height: auto;
+        }
+
         .header h1 {
             margin: 0;
             text-align: left;
             display: flex;
             align-items: center;
-            height: 100px; /* Same height as the image */
         }
 
         .email-form {
             margin-top: var(--spacing-xl);
             display: flex;
             justify-content: center;
+            width: 100%;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .email-form input[type="email_id"] {
-            width: 300px;
-            max-width: 100%;
+            flex: 1;
+            min-width: 0; /* Prevents flex items from overflowing */
             margin-right: var(--spacing-sm);
         }
 
+        .email-form button {
+            white-space: nowrap;
+        }
+
+        /* Responsive styles */
         @media (max-width: 768px) {
             .header {
                 flex-direction: column;
@@ -70,6 +89,7 @@
             .header h1 {
                 font-size: var(--font-size-xxl);
                 text-align: center;
+                height: auto;
             }
 
             .email-form {
@@ -78,8 +98,28 @@
             }
 
             .email-form input[type="email_id"] {
+                width: 100%;
                 margin-right: 0;
                 margin-bottom: var(--spacing-sm);
+            }
+
+            .email-form button {
+                width: 100%;
+            }
+        }
+
+        /* Fix for very small screens */
+        @media (max-width: 350px) {
+            .container {
+                padding: var(--spacing-md);
+            }
+
+            h1 {
+                font-size: var(--font-size-xl);
+            }
+
+            p {
+                font-size: var(--font-size-md);
             }
         }
     </style>
