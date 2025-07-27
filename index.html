@@ -11,13 +11,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Import Theme CSS -->
+    <link rel="stylesheet" href="assets/css/theme.css">
     <style>
         body {
-            font-family: 'Comfortaa', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #fff9f2;
-            color: #333;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -26,7 +23,7 @@
 
         .container {
             text-align: center;
-            padding: 2rem;
+            padding: var(--spacing-xl);
             max-width: 800px;
         }
 
@@ -34,8 +31,8 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 2rem;
-            gap: 1rem;
+            margin-bottom: var(--spacing-xl);
+            gap: var(--spacing-md);
         }
 
         .logo {
@@ -44,78 +41,45 @@
             justify-content: center;
         }
 
-        h1 {
-            font-family: 'Comfortaa', sans-serif;
-            font-weight: 700;
-            font-size: 3.5rem;
+        .header h1 {
             margin: 0;
-            color: #950000;
             text-align: left;
-            /* Ensure vertical alignment with logo */
             display: flex;
             align-items: center;
             height: 100px; /* Same height as the image */
         }
 
-        p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            line-height: 1.6;
-            color: #5e0000;
-        }
-
         .email-form {
-            margin-top: 2rem;
+            margin-top: var(--spacing-xl);
+            display: flex;
+            justify-content: center;
         }
 
-        input[type="email_id"] {
-            padding: 12px 20px;
+        .email-form input[type="email_id"] {
             width: 300px;
             max-width: 100%;
-            border: 2px solid #950000;
-            border-radius: 30px;
-            font-family: 'Comfortaa', sans-serif;
-            font-size: 1rem;
-            margin-right: 10px;
-            outline: none;
-        }
-
-        button {
-            padding: 12px 25px;
-            background-color: #950000;
-            color: #ffbd77;
-            border: none;
-            border-radius: 30px;
-            font-family: 'Comfortaa', sans-serif;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        button:hover {
-            background-color: #7a0000;
+            margin-right: var(--spacing-sm);
         }
 
         @media (max-width: 768px) {
             .header {
                 flex-direction: column;
-                gap: 1rem;
+                gap: var(--spacing-md);
             }
 
-            h1 {
-                font-size: 2.5rem;
+            .header h1 {
+                font-size: var(--font-size-xxl);
                 text-align: center;
             }
 
             .email-form {
-                display: flex;
                 flex-direction: column;
                 align-items: center;
             }
 
-            input[type="email"] {
+            .email-form input[type="email_id"] {
                 margin-right: 0;
-                margin-bottom: 10px;
+                margin-bottom: var(--spacing-sm);
             }
         }
     </style>
@@ -132,7 +96,7 @@
         <p>Welcome to our platform. We're building something amazing and can't wait to share it with you.</p>
         <form class="email-form">
             <input type="email_id" placeholder="Enter your email name" name="email_id">
-            <button type="submit">Join Waitlist</button>
+            <button type="submit" class="btn">Join Waitlist</button>
         </form>
     </div>
 </body>
